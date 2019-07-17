@@ -23,7 +23,8 @@ void PPMUpdater()
 {
   if(CPPM.synchronized()){
   RCController1.switch1Raw = CPPM.read_us(CPPM_GEAR);
-  RCController1.steering=map(CPPM.read_us(CPPM_AILE), 991, 2015, 0, 255);
+  //RCController1.steering=map(CPPM.read_us(CPPM_AILE), 991, 2015, 0, 255);
+  RCController1.steering=map(CPPM.read_us(CPPM_RUDD), 991, 2015, 0, 255);
   RCController1.throttle=map(CPPM.read_us(CPPM_THRO), 1006, 2014, 0, 255);
   RCController1.brake=map(CPPM.read_us(CPPM_ELEV), 991, 2015, 0, 255);
   
